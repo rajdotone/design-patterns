@@ -1,0 +1,99 @@
+# === Maven ===
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.jar
+
+# === Gradle (if you add it later) ===
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+.gradletasknamecache
+
+# === JVM / compiled ===
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# (Maven/Gradle build outputs that live in target/ or build/ are already ignored.)
+
+# === JetBrains (IntelliJ, etc.) ===
+# Whole project metadata — clone stays clean; each dev re-imports from pom.xml
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# === Eclipse ===
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.loadpath
+.recommenders
+
+# === VS Code ===
+.vscode/*
+!.vscode/extensions.json
+# Uncomment to share:
+# !/.vscode/settings.json
+# !/.vscode/launch.json
+# !/.vscode/tasks.json
+
+# === macOS ===
+.DS_Store
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+**/.DS_Store
+
+# === Windows ===
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# === Linux ===
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# === Misc ===
+*.orig
+*.rej
+.svn/
+.env
+.env.local
+*.sublime-project
+*.sublime-workspace
