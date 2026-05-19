@@ -3,6 +3,7 @@ package com.raj.designpatterns.observer.weather;
 public class WeatherStation {
 
 	public static void main(String[] args) {
+		// here the weatherData object is created.
 		WeatherData weatherData = new WeatherData();
 		
 		CurrentConditionsDisplay currentDisplay = 

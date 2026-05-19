@@ -3,17 +3,19 @@ package com.raj.designpatterns.observer.weather;
 import com.raj.designpatterns.observer.core.Observer;
 import com.raj.designpatterns.observer.core.Subject;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 public class WeatherData implements Subject {
-	private List<Observer> observers;
+	private final List<Observer> observers;
 	private float temperature;
 	private float humidity;
 	private float pressure;
 	
 	public WeatherData() {
-		observers = new ArrayList<>();
+		// Thread-safe list prevents ConcurrentModificationException
+		// if observers are added/removed while iterating.
+		observers = new CopyOnWriteArrayList<>();
 	}
 	
 	@Override
