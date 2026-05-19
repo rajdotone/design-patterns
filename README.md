@@ -35,6 +35,6 @@ The patterns are organized by their primary purpose: **Creational** (how objects
 Each pattern is contained within its own package and includes a main execution class that can be compiled and run independently. For example, to run the current Observer pattern implementation:
 
 ```bash
-javac -d target/classes src/main/java/headfirst/designpatterns/observer/weather/*.java
-java -cp target/classes headfirst.designpatterns.observer.weather.WeatherStation
+javac -d target/classes src/main/java/com/raj/designpatterns/observer/core/*.java src/main/java/com/raj/designpatterns/observer/weather/*.java
+java -cp target/classes com.raj.designpatterns.observer.weather.WeatherStation
 ```

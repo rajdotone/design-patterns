@@ -1,4 +1,7 @@
-package headfirst.designpatterns.observer.weather;
+package com.raj.designpatterns.observer.weather;
+
+import com.raj.designpatterns.observer.core.Observer;
+import com.raj.designpatterns.observer.core.Subject;
 
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	private float temperature;
@@ -10,12 +13,14 @@ public class CurrentConditionsDisplay implements Observer, DisplayElement {
 		weatherData.registerObserver(this);
 	}
 	
+	@Override
 	public void update(float temperature, float humidity, float pressure) {
 		this.temperature = temperature;
 		this.humidity = humidity;
 		display();
 	}
 	
+	@Override
 	public void display() {
 		System.out.println("Current conditions: " + temperature 
 			+ "F degrees and " + humidity + "% humidity");

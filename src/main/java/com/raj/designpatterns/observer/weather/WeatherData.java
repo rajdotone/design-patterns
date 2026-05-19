@@ -1,4 +1,7 @@
-package headfirst.designpatterns.observer.weather;
+package com.raj.designpatterns.observer.weather;
+
+import com.raj.designpatterns.observer.core.Observer;
+import com.raj.designpatterns.observer.core.Subject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,14 +16,17 @@ public class WeatherData implements Subject {
 		observers = new ArrayList<>();
 	}
 	
+	@Override
 	public void registerObserver(Observer o) {
 		observers.add(o);
 	}
 	
+	@Override
 	public void removeObserver(Observer o) {
 		observers.remove(o);
 	}
 	
+	@Override
 	public void notifyObservers() {
 		for (Observer observer : observers) {
 			observer.update(temperature, humidity, pressure);

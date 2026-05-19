@@ -1,4 +1,4 @@
-package headfirst.designpatterns.observer.weather;
+package com.raj.designpatterns.observer.weather;
 
 public class WeatherStation {
 
