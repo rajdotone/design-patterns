@@ -1,35 +1,38 @@
 <div align="center">
-  <h1>Head First Design Patterns</h1>
-  <h3>A comprehensive study of classic object-oriented design patterns in Java</h3>
+  <h1>Design Patterns in Java</h1>
+  <h3>A comprehensive study of classic object-oriented design patterns</h3>
 
   ![Java](https://img.shields.io/badge/JAVA-17+-orange?style=for-the-badge&logo=java)
   ![Maven](https://img.shields.io/badge/MAVEN-3.x-red?style=for-the-badge&logo=apachemaven)
 
-  *Strive for loosely coupled designs between objects that interact.*
+  *Building flexible, maintainable, and loosely coupled systems.*
 </div>
 
 ---
 
 ## Overview
 
-This repository contains clean, from-scratch implementations of the design patterns taught in the classic book *Head First Design Patterns*. The goal is to build flexible, maintainable, and loosely coupled object-oriented systems.
+This repository contains clean, from-scratch implementations of fundamental software design patterns. The goal is to leverage proven architectural solutions to solve common software design problems, making code more reusable and resilient to change.
 
-Currently featured is the **Observer Pattern**, modeled after the book's "Weather Station" example. The Observer Pattern defines a one-to-many dependency between objects so that when the subject changes state, all of its dependents are **notified** automatically.
+The patterns are organized by their primary purpose: **Creational** (how objects are created), **Structural** (how objects are composed), and **Behavioral** (how objects communicate).
 
-| Pattern Element | Class / Interface | Role |
-| :--- | :--- | :--- |
-| **Subject** | `Subject` | The core interface. Manages the registry of observers (register, remove, notify). |
-| **Concrete Subject** | `WeatherData` | Maintains the core state (temperature, humidity) and the `List` of active observers. |
-| **Observer** | `Observer` | The listener interface. Defines the `update()` method for receiving state changes. |
-| **Concrete Observer** | `CurrentConditionsDisplay` | Registers with the subject and reacts to state changes to display live data. |
+### Implemented Patterns
+
+| Category | Pattern | Description | Status |
+| :--- | :--- | :--- | :---: |
+| **Behavioral** | **Observer** | Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified automatically. | ✅ |
+| **Behavioral** | **Strategy** | Defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime. | ⏳ |
+| **Structural** | **Decorator** | Attaches additional responsibilities to an object dynamically without altering its structure. | ⏳ |
+| **Creational** | **Factory** | Defines an interface for creating an object, but lets subclasses decide which class to instantiate. | ⏳ |
+| **Creational** | **Singleton** | Ensures a class has only one instance and provides a global point of access to it. | ⏳ |
 
 <br>
 
-In observer terms, the **Subject** is the sole owner of the data. The **Observers** are completely decoupled from the subject's implementation; they simply wait for the subject to push updates to them via the `update()` method.
+*More patterns will be added to this repository as the study progresses.*
 
 ## How to Run
 
-Compile and run the current pattern (Observer / Weather Station):
+Each pattern is contained within its own package and includes a main execution class that can be compiled and run independently. For example, to run the current Observer pattern implementation:
 
 ```bash
 javac -d target/classes src/main/java/headfirst/designpatterns/observer/weather/*.java
