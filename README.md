@@ -1,24 +1,35 @@
-# Observer Pattern: Weather Station
+<div align="center">
+  <h1>Head First Design Patterns</h1>
+  <h3>A comprehensive study of classic object-oriented design patterns in Java</h3>
 
-This repository contains a clean, from-scratch implementation of the **Observer Pattern** exactly as taught in Chapter 2 of *Head First Design Patterns*.
+  ![Java](https://img.shields.io/badge/JAVA-17+-orange?style=for-the-badge&logo=java)
+  ![Maven](https://img.shields.io/badge/MAVEN-3.x-red?style=for-the-badge&logo=apachemaven)
+
+  *Strive for loosely coupled designs between objects that interact.*
+</div>
+
+---
 
 ## Overview
 
-The Observer Pattern defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified and updated automatically.
+This repository contains clean, from-scratch implementations of the design patterns taught in the classic book *Head First Design Patterns*. The goal is to build flexible, maintainable, and loosely coupled object-oriented systems.
 
-This project simulates a **Weather Station** where a `WeatherData` object (the Subject) tracks the current temperature, humidity, and pressure. Various displays (like the `CurrentConditionsDisplay`) act as Observers. They register themselves with the `WeatherData` object and update automatically whenever new measurements are available.
+Currently featured is the **Observer Pattern**, modeled after the book's "Weather Station" example. The Observer Pattern defines a one-to-many dependency between objects so that when the subject changes state, all of its dependents are **notified** automatically.
 
-## Structure
+| Pattern Element | Class / Interface | Role |
+| :--- | :--- | :--- |
+| **Subject** | `Subject` | The core interface. Manages the registry of observers (register, remove, notify). |
+| **Concrete Subject** | `WeatherData` | Maintains the core state (temperature, humidity) and the `List` of active observers. |
+| **Observer** | `Observer` | The listener interface. Defines the `update()` method for receiving state changes. |
+| **Concrete Observer** | `CurrentConditionsDisplay` | Registers with the subject and reacts to state changes to display live data. |
 
-*   **`Subject`**: The interface that the `WeatherData` class implements to allow observers to register, remove, and be notified.
-*   **`Observer`**: The interface that all displays implement to receive `update()` calls.
-*   **`WeatherData`**: The concrete subject that maintains state and a list of observers.
-*   **`CurrentConditionsDisplay`**: A concrete observer that listens to `WeatherData` and prints the current temperature and humidity.
-*   **`WeatherStation`**: The main execution class that ties everything together.
+<br>
+
+In observer terms, the **Subject** is the sole owner of the data. The **Observers** are completely decoupled from the subject's implementation; they simply wait for the subject to push updates to them via the `update()` method.
 
 ## How to Run
 
-Compile and run the `WeatherStation` class:
+Compile and run the current pattern (Observer / Weather Station):
 
 ```bash
 javac -d target/classes src/main/java/headfirst/designpatterns/observer/weather/*.java
