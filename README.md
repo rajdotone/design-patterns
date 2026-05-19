@@ -22,7 +22,7 @@ The patterns are organized by their primary purpose: **Creational** (how objects
 | :--- | :--- | :--- | :---: |
 | **Behavioral** | **Observer** | Defines a one-to-many dependency between objects so that when one object changes state, all of its dependents are notified automatically. | ✅ |
 | **Behavioral** | **Strategy** | Defines a family of algorithms, encapsulates each one, and makes them interchangeable at runtime. | ⏳ |
-| **Structural** | **Decorator** | Attaches additional responsibilities to an object dynamically without altering its structure. | ⏳ |
+| **Structural** | **Decorator** | Attaches additional responsibilities to an object dynamically without altering its structure. | ✅ |
 | **Creational** | **Factory** | Defines an interface for creating an object, but lets subclasses decide which class to instantiate. | ⏳ |
 | **Creational** | **Singleton** | Ensures a class has only one instance and provides a global point of access to it. | ⏳ |
 
@@ -32,9 +32,14 @@ The patterns are organized by their primary purpose: **Creational** (how objects
 
 ## How to Run
 
-Each pattern is contained within its own package and includes a main execution class that can be compiled and run independently. For example, to run the current Observer pattern implementation:
+Each pattern is contained within its own package and includes a main execution class that can be compiled and run independently. For example, to run the Observer and Decorator patterns:
 
 ```bash
+# Observer Pattern
 javac -d target/classes src/main/java/com/raj/designpatterns/observer/core/*.java src/main/java/com/raj/designpatterns/observer/weather/*.java
 java -cp target/classes com.raj.designpatterns.observer.weather.WeatherStation
+
+# Decorator Pattern
+javac -d target/classes src/main/java/com/raj/designpatterns/decorator/core/*.java src/main/java/com/raj/designpatterns/decorator/starbuzz/*.java
+java -cp target/classes com.raj.designpatterns.decorator.starbuzz.StarbuzzCoffee
 ```
